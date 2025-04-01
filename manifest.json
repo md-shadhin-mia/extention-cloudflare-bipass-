@@ -5,7 +5,7 @@
   "description": "A simple Chrome extension",
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icon.png"
+    "default_icon": "icons/icon.png"
   },
   "permissions": ["activeTab"],
   "content_scripts": [
