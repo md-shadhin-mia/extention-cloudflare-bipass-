@@ -27,4 +27,8 @@ setInterval(() => {
         // alert(``);
         simulateClick(x, y);
     }
+    if( document.querySelectorAll("#codigooo").length > 0 &&  document.querySelector("#captcha_text").length > 0) {
+        const tex = document.querySelector("#codigooo").innerText;
+        document.querySelector("#captcha_text").value = tex;
+    }
 }, 1000);
