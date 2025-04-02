@@ -27,10 +27,17 @@ setInterval(() => {
         // alert(``);
         simulateClick(x, y);
     }
+    
     if( document.querySelectorAll("#codigooo").length > 0) {
-        const tex = document.querySelector("#codigooo").innerText;
-        document.querySelector("#captcha_text").value = tex;
-        console.log(`Captcha text: ${tex}`);
-        document.querySelector(".g-recaptcha").click();
+        console.log(`Captcha here!`);
+        setTimeout(() => {
+            const tex = document.querySelector("#codigooo").innerText;
+            document.querySelector("#captcha_text").value = tex;
+            const mouseDownEvent = new MouseEvent('mousedown', {
+                bubbles: true,
+                cancelable: true
+            });
+            document.querySelector(".g-recaptcha").dispatchEvent(mouseDownEvent);
+        }, 3000);
     }
 }, 1000);
