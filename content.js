@@ -14,13 +14,17 @@ function simulateClick(x = 0, y = 0) {
 }
 
 setInterval(() => {
-    if(document.querySelectorAll('.cb-lb-t').length > 0) {
-        const clickableElements = document.querySelectorAll('.cb-lb-t');
-        const randomIndex = Math.floor(Math.random() * clickableElements.length);
-        const element = clickableElements[randomIndex];
-        const rect = element.getBoundingClientRect();
-        const x = rect.left + Math.random() * rect.width;
-        const y = rect.top + Math.random() * rect.height;
+    if(document.querySelectorAll("#turnstile-captcha").length > 0) {
+        const clickableElements = document.querySelectorAll("#turnstile-captcha");
+        // get area of the first element
+        const rect = clickableElements[0].getBoundingClientRect();
+        // get random x and y coordinates within the element's area
+
+        const x = rect.left + 35 * rect.width;
+        const y = rect.top + 35 * rect.height;
+        // simulate a click at the random coordinates
+        console.log(`Clicked at coordinates: ${x}, ${y}`);
+        // alert(``);
         simulateClick(x, y);
     }
 }, 1000);
